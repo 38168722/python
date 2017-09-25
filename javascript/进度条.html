@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>进度条</title>
+	<script language="Javascript" type="text/javascript">
+	    window.setTimeout("Update();",0);
+		function Update()
+		{
+			var frm=document.getElementById("frame");
+			var list=document.getElementsByTagName("div");
+			var bar;
+			for (var i = 0; i < list.length; i++) {
+				if(list[i].className=="bar")  //查找class属性为bar的标签
+					bar=list[i];
+			}
+			if(bar.style.width=="")
+			{
+				bar.style.width="6%";  //设置宽度
+			}
+			else
+			{
+                bar.style.width=parseInt(bar.style.width)+1+"%";
+			}
+			bar.nextSibling.nextSibling.textContent=parseInt(bar.style.width)-5+"%";
+			if(bar.style.width!="105%")
+			{
+				window.setTimeout("Update();",100);   //设置超时
+			}
+		}
+	</script>
+
+	<style text="text/css">
+        #frame{
+        	border: #ff0000 solid 1px;
+        	overflow: hidden;
+        	width: 300px;
+        	-ms-border-radius:50px;
+        	-moz-border-radius:50px;
+        	-webkit-border-radius:50px;
+        	-khtml-border-radius:50px;
+        	-o-border-radius:50px;
+        	border-radius:50px;
+        	border: 2px solid black;
+        	border-bottom-width:4px;
+        	border-top-width: 3px; 
+        	background-image:-moz-linear-gradient(top,#f8f8f8,#cccccc);
+        	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#f8f8f8),color-stop(1,#ccc));
+        	filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr='#f8f8f8',endColorstr='#ccc',GradientType='0');
+        }
+        #frame .border{
+        	margin:10px 30px;
+        	border:2px solid black;
+        	height: 30px;
+        	background-image: -moz-linear-gradient(top,#b0b0b0,#f8f8f8);
+        	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#b0b0b0),color-stop(1,#f8f8f8));
+        	filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr='#b0b0b0',endColorstr='#f8f8f8',GradientType='0');
+        	overflow: hidden;
+        	position: relative;
+        }
+        #frame .border .bar{
+        	width: 5%;
+        	height: 100%;
+        	background-image: -moz-linear-gradient(top,#b0b0b0,#f8f8f8);
+        	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#8efb3c),color-stop(1,#7ac478));
+        	filter: progid:DXImageTransfrom.Microsoft.gradient(startColorstr='#8efb3c',endColorstr='#7ac478',GradientType='0');
+        	-ms-border-top-right-radius:10px;
+        	-moz-border-top-right-radius:10px;
+        	-webkit-border-top-right-radius:10px;
+        	-khtml-border-top-right-radius:10px;
+        	-o-border-top-right-radius:10px;
+        	border-top-right-radius:10px;
+        	-ms-border-bottom-right-radius:10px;
+        	-moz-border-bottom-right-radius:10px;
+        	-webkit-border-bottom-right-radius:10px;
+        	-khtml-border-bottom-right-radius:10px;
+        	-o-border-bottom-right-radius:10px;
+        	border-bottom-right-radius:10px;
+        	-webkit-transition:all 0.1s ease-in-out 0s;
+        	-moz-transition:all 0.1s ease-in-out 0s;
+        	-ms-transition:all 0.1s ease-in-out 0s;
+        	-o-transition:all 0.1s ease-in-out 0s;
+        	transition:all 0.1s ease-in-out 0s;
+        }
+        #frame .border .persentage{
+        	position: absolute;
+        	left:0;
+        	top:0;
+        	width: 100%;
+        	text-align: center;
+        	padding:5px;
+        	color: #f9ec75;
+        	font-weight: bold;
+        }
+	</style>
+</head>
+<body>
+	<div id="frame">
+		<div class="border">
+			<div class="bar">
+				
+			</div>
+			<div class="persentage">
+				0%
+			</div>
+		</div>
+	</div>
+</body>
+</html>

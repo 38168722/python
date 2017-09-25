@@ -4,11 +4,54 @@
 <head>
     <title></title>
     <META http-equiv=Content-Type content="text/html; charset=gb2312">
-    <script type="text/javascript">
-        document.write("xidada:")
+    <script>
+       function getCurrentTime(){
+           var date = new Date();
+           var year = date.getFullYear();
+           var month = date.getMonth();
+           var day = date.getDate();
+           var hours=date.getHours();
+           var minutes=date.getMinutes();
+           var week=date.getDay();
+           s = year+"-"+changemonth(month+1)+"-"+day+"-"+hours+"-"+minutes+"-"+getDate(week);
+           return s;
+       }
+
+        function changemonth(num){
+            if(num<10){
+                return "0"+num;
+            }
+            return num;
+        }
+
+        function getDate(num){
+            var arr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+            return arr[num];
+        }
+
+        function foo(){
+            var date=new Date();
+            var date=date.toLocaleString();
+            var ele=document.getElementById("timer");
+            ele.value=date;
+        }
+        var ID;
+        function begin(){
+            if (ID==undefined){
+                foo();
+                ID=setInterval(foo,1000);
+            }
+        }
+
+        function end(){
+            clearInterval(ID);
+            ID=undefined;
+        }
+
     </script>
+
 </head>
 <body>
-
+<input id="timer" type="text"/><button  onclick="begin()">显示</button><button  onclick="end()">清除</button>
 </body>
 </html>

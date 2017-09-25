@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <script>
+        var sum=0;
+        function begin(){
+            setInterval(foo,1000)
+        }
+        var el=Document.getElementsByTagName("div");
+        function foo(){
+            console.log(sum)
+            sum=sum+1;
+            if (sum=300){
+                return
+            }
+            el.width=sum;
+        }
+        begin();
+    </script>
+
+    <style>
+        div{
+            width: 15px;
+            height: 20px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
