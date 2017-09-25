@@ -26,9 +26,7 @@
     float: left;
 }
 
-.action-menu{
 
-}
 
 .action-menu li{
     margin-top: 11px;
@@ -40,11 +38,12 @@
 }
 
 .action-nav{
-    /*display: inline-block;*/
-
-    float: right;
-    margin-top: 11px;
-    width: 322px;
+    display: inline;
+    /*float: right;*/
+    position: absolute;
+    top: 11px;
+    right: 0px;
+    width: 400px;
     height: 23px;
     font-size: 12px;
     word-spacing: 12px;
@@ -58,12 +57,12 @@
 }
 
 .action-nav img{
+    position: absolute;
+    /*top: -13px;*/
+    top: -13px;
     height: 25px;
     width: 25px;
-    float: right;
-    margin-right: 122px;
-    border: 1px solid;
-    margin-top: -28px;
+    border: 1px #ffffff solid;
 }
 
 a{
@@ -83,7 +82,7 @@ a{
 
 .content_left{
     width: 630px;
-    height: 1024px;
+    height: 981px;
     background-color:#ffffff;
     float:left;
     margin-left: 32px;
@@ -91,7 +90,7 @@ a{
 
 .content_right{
     width: 302px;
-    height: 1024px;
+    height: 981px;
     /*background-color:darkslategray;*/
     float:right;
     margin-right: 29px;
@@ -127,20 +126,24 @@ a{
 .ul_left li{
     list-style: none;
     float: left;
+    /*display: inline;*/
     font-size: 15px;
     line-height: 23px;
     color: #369;
     font-weight:700;
-    padding: 12px;
+    padding-right: 12px;
+    padding-top: 11px;
 }
 
 .ul_right li{
     list-style: none;
     float: right;
+    /*display: inline;*/
     font-size: 15px;
     line-height: 29px;
     color: #390;
-    padding: 11px;
+    padding-left: 11px;
+    padding-top: 11px;
 }
 
 .ul_right li input{
@@ -252,4 +255,41 @@ a{
 
 body{
     background-color: #ededed;
+}
+
+.xulie{
+    width: 630px;
+    height: 84px;
+    /*background-color: #eb2744;*/
+    border-top:1px #99aecb;
+}
+
+.xulie ul{
+    list-style: none;
+    /*text-align: center;*/
+}
+
+.xulie button{
+    width: 36px;
+    height: 36px;
+}
+
+.xulie li{
+    /*float:left;*/
+    display: inline;
+    line-height: 84px;
+    padding-left:6px;
+}
+
+.next{
+    width: 79px !important;
+    height: 36px !important;
+}
+
+.action-nav ul{
+    list-style: none;
+}
+.action-nav li{
+    display: inline;
+    text-align: right;
 }

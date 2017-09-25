@@ -4,19 +4,44 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-    .box{
-        padding: 20px;
-        border: 1px solid green;
-        width: 100px;
-        height: 100px;
-    }
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
 
+        .box{
+            width: 1024px;
+            height: 200px;
+            margin: auto;
+            border: 1px red solid;
+        }
+        .box li{
+            list-style: none;
+            display: inline;
+            padding-left: 10px;
+        }
+        .box ul{
+            text-align: center;
+            line-height: 200px;
+        }
+        .box button{
+            width: 36px;
+            height: 36px;
+        }
 
     </style>
 </head>
 <body>
 <div class="box">
-
+    <ul>
+        <li><button>1</button></li>
+        <li><button>2</button></li>
+        <li><button>3</button></li>
+        <li><button>4</button></li>
+        <li><button>5</button></li>
+        <li><button>6</button></li>
+        <li><button>7</button></li>
+    </ul>
 </div>
 </body>
 </html>

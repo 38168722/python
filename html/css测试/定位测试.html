@@ -4,42 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-
-        body{
-            margin: 0px;
+  <style type="text/css">
+        #inline p{
+            display: inline;
+            background-color:red ;
+            letter-spacing: 8px;
+            /*padding-left: 10px;*/
+            width:300px;/*这里设置无用*/
+            word
         }
-
-        .div1{
-            background-color: rebeccapurple;
-            width: 300px;
-            height: 300px;
-            overflow: hidden;
-
-        }
-        .div2{
-            background-color: green;
-            width: 100px;
+        #inline-block p{
+            display: inline-block;
+            background-color:red ;
+            width:100px;
             height: 100px;
-            margin-bottom: 40px;
-            margin-top: 20px;
+            padding:10px;
         }
-        .div3{
-            background-color:teal;
-            width: 100px;
-            height: 100px;
-            margin-top: 20px;
+        #block p{
+            display: block;
+            background-color: red;
+            width:100px;
+            padding:20px;
+        }
+        div{
+            margin:20px;
+            background-color: #eee;
         }
     </style>
 </head>
 <body>
-<div style="background-color: bisque;width: 300px;height: 300px"></div>
+ <div id="inline">
+        display:inline 在同一行，并且宽度就等于文字内容的宽度且设置宽度无用<p>内容内容内容内容内容内容内容</p>内容内容内容内容内容内容
+     </div>
+     <div id="inline-block">
+        display:inline-block  既有行级元素的特性，也有块级元素的特性，因此在同一行，能设置宽高，margin，padding<p>内容内容内容内容内容内容内容</p>内容内容内容内容内容内容
+     </div>
+     <div id="block">
+        display:block 块级元素会自动换新行，占领一行,可以设置宽高，margin，padding <p>内容内容内容内容内容内容内容</p>内容内容内容内容内容内容
+     </div>
 
-<div class="div1">
 
-   <div class="div2"></div>
-   <div class="div3"></div>
-</div>
 
 </body>
 
