@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .outer{
+            width: 790px;
+            height: 340px;
+            border: 1px solid red;
+            margin: 100px auto;
+            position: relative;
+        }
+        .img{
+            list-style: none;
+            padding: 0;
+        }
+
+        .img li{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+        .num{
+            position: absolute;
+            list-style: none;
+            bottom: 20px;
+            left: 300px;
+        }
+
+        .num li{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            color: black;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+
+
+        .num .active{
+            background-color: red;
+        }
+
+        .btn{
+            position: absolute;
+            width: 30px;
+            height: 60px;
+            background-color: grey;
+            opacity: 0.5;
+            font-size: 28px;
+            text-align: center;
+            line-height: 60px;
+            font-weight: 800;
+            top:50%;
+            margin-top: -30px;
+        }
+
+        .leftBtn{
+            left: 0;
+        }
+
+        .rightBtn{
+            right: 0;
+        }
+
+        .hide{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="outer">
+    <ul class="img">
+        <li><a href=""><img src="images/JDimg/1.jpg" alt=""></a></li>
+        <li class="hide"><a href=""><img src="images/JDimg/2.jpg" alt=""></a></li>
+        <li class="hide"><a href=""><img src="images/JDimg/3.jpg" alt=""></a></li>
+        <li class="hide"><a href=""><img src="images/JDimg/4.jpg" alt=""></a></li>
+        <li class="hide"><a href=""><img src="images/JDimg/5.jpg" alt=""></a></li>
+    </ul>
+
+
+    <ul class="num">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+
+    <div class="leftBtn btn"> < </div>
+    <div class="rightBtn btn"> > </div>
+</div>
+
+
+</body>
+</html>
