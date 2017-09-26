@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>事件触发</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <script>
+        function func(self){
+            alert(self.innerHTML);
+        }
+
+    </script>
+</head>
+<body>
+<ul>
+    <li onclick="func(this)">1111</li>
+    <li onclick="func(this)">2222</li>
+    <li onclick="func(this)">3333</li>
+    <li onclick="func(this)">4444</li>
+    <li onclick="func(this)">5555</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>菜单项目</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .left{
+            width: 600px;
+            height: 1200px;
+            float:left;
+            background-color: #f9ec75;
+        }
+
+        .title{
+            width: 60px;
+            height: 20px;
+            background-color: #ff0000;
+        }
+
+        .hide{
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="left">
+    <div class="item">
+        <div class="title">菜单一</div>
+        <ul class="con hide">
+            <li>1111</li>
+            <li>2222</li>
+            <li>3333</li>
+        </ul>
+    </div>
+      <div class="item">
+        <div class="title">菜单二</div>
+        <ul class="con hide">
+            <li>1111</li>
+            <li>2222</li>
+            <li>3333</li>
+        </ul>
+    </div>
+       <div class="item">
+        <div class="title">菜单三</div>
+        <ul class="con hide">
+            <li>1111</li>
+            <li>2222</li>
+            <li>3333</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    title=document.getElementsByClassName("title");
+    for (var i=0;i<title.length;i++) {
+        title[i].onclick = function () {
+            this.nextElementSibling.classList.remove("hide");
+            for (var j = 0; j < title.length; j++) {
+                if (title[j] != this) {
+                    title[j].nextElementSibling.classList.add("hide");
+                }
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

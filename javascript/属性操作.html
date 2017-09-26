@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>属性操作</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <style>
+        .hide{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div class="c1" id="d1">DIV</div>
+
+<script>
+    var ele=document.getElementsByClassName("c1")[0];
+//    ele.setAttribute("id","d3");
+    ele.classList.add("hide");
+    ele.classList.remove("hide");
+
+</script>
+
+
+</body>
+</html>

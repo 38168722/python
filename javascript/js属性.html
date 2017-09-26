@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+</head>
+<body>
+<div class="c1">div</div>
+<p id="d1">p</p>
+
+<div class="c2">
+    <div class="c3">
+        <p class="p1">p1</p>
+    </div>
+    <p class="p2">p2</p>
+    <p class="p2">p2</p>
+    <p class="p2">p2</p>
+    <p class="p2">p2</p>
+    <p class="p2">p2</p>
+    <p class="p2">p2</p>
+    <p class="p2">p2</p>
+</div>
+
+<script>
+    var ele=document.getElementsByClassName("c1")[0];
+//    ele.innerHTML="<a href='http://www.baidu.com'>click</a>";
+    ele.innerText="<a>click</a>"
+
+</script>
+</body>
+</html>

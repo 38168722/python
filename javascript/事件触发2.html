@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>事件触发2</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+
+
+
+</head>
+<body>
+<ul>
+    <li>1111</li>
+    <li>2222</li>
+</ul>
+  <script>
+
+            var el=document.getElementsByTagName("li");
+            console.log(el);
+            for(var i=0;i<el.length;i++){
+                el[i].onclick=function(){
+                    alert(this.innerText);
+                }
+            }
+
+    </script>
+
+
+</body>
+</html>
