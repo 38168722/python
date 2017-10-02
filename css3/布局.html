@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>流动布局</title>
+    <style>
+        body{
+            margin: auto;
+            width: 960px;
+        }
+         .header{
+             height: 200px;
+             background-color: #ff0000;
+         }
+         .aside{
+             width: 200px;
+             height: 500px;
+             background-color: #339900;
+             float: left;
+         }
+         .section{
+             width: 760px;
+             height: 500px;
+             background-color: #1b6d85;
+             float: right;
+         }
+        .footer{
+            height: 200px;
+            background-color: #ffff00;
+            clear: both;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<header class="header">头部</header>
+<aside class="aside">侧边</aside>
+<section class="section">主体中部
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+</section>
+<footer class="footer">底部</footer>
+</body>
+</html>
