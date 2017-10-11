@@ -5,22 +5,44 @@
     <title>属性操作</title>
     <META http-equiv=Content-Type content="text/html; charset=gb2312">
     <style>
-        .hide{
-            display:none;
+        .c1{
+            width: 400px;
+            height: 300px;
+            border:1px solid red;
         }
     </style>
 </head>
 <body>
-<div class="c1" id="d1">DIV</div>
+
+
+<div class="c1">p1
+    <p id="p2">p2</p>
+</div>
+<button id="addbtn">添加</button>
 
 <script>
-    var ele=document.getElementsByClassName("c1")[0];
-//    ele.setAttribute("id","d3");
-    ele.classList.add("hide");
-    ele.classList.remove("hide");
+var addbtn=document.getElementById("addbtn");
+//添加一个标签
+var div=document.getElementsByClassName("c1")[0];
+var ele=document.createElement("a");
+ele.href="http://www.baidu.com";
+ele.innerText="点击我";
 
+//添加一个图像
+var img=document.createElement("img");
+img.height=100;
+img.width=100;
+img.src="img/g1.png";
+
+
+//被替换的节点
+var p2=document.getElementById("p2");
+
+
+addbtn.onclick=function () {
+    div.appendChild(img);    //增加节点
+//      div.replaceChild(img,p2);
+}
 </script>
-
-
 </body>
 </html>

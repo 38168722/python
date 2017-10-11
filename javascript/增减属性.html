@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增减属性</title>
+    <style>
+        .c1{
+            width: 500px;
+            height: 300px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<table align="center" border="1">
+    <tbody id="t1">
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><input type="text"></td>
+            <td><button class="del">del</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><input type="text"></td>
+            <td><button class="del">del</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><input type="text"></td>
+            <td><button class="del">del</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+//    var eles=document.getElementsByClassName("del");
+//    for (var i=0;i<eles.length;i++){
+//        eles[i].onclick=function () {
+//            var ele_tr=this.parentElement.parentElement;
+//            var ele_tbody=document.getElementById("t1");
+//            ele_tbody.removeChild(ele_tr);
+//            console.log(ele_tbody);
+//        }
+//    }
+
+
+
+
+</script>
+
+<div class="c1">
+    <p id="p1">p1</p>
+</div>
+<button class="addbtn">ADD</button>
+<button class="delbtn">del</button>
+<button class="replacebtn">replaceBtn</button>
+<hr>
+</body>
+</html>

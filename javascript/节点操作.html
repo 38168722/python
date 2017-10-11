@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            width: 500px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+
+    <script>
+       window.onload=function () {
+           var ele=document.getElementsByClassName("addBtn")[0];
+           var ele_del=document.getElementsByClassName("delBtn")[0];
+           var eleBtn=document.getElementsByClassName("repalceBtn")[0];
+
+
+           // 绑定的添加节点事件
+            ele.onclick=function () {
+                // 创建一个a标签
+                var ele_a=document.createElement("a");
+                console.log(ele_a);       //  <a></a>
+                ele_a.innerHTML="点击";   //  <a>点击</a>
+                ele_a.setAttribute("href","http://www.baidu.com");
+                ele_a.id="d1";
+
+                // 创建img标签
+
+                var ele_img=document.createElement("img");  // <img>
+                ele_img.src="Bootstrap_i2.png";   //  <img src="">
+                ele_img.height=50;
+                ele_img.width=50;
+
+                // 添加标签
+
+                // 找到父标签
+                ele_p=document.getElementsByClassName("c1")[0];
+                // ele_p.appendChild(ele_a)
+                ele_p.appendChild(ele_img)
+
+            };
+           // 绑定删除节点事件
+            ele_del.onclick=function () {
+                var ele_p=document.getElementById("p1");
+                var ele_parent=document.getElementsByClassName("c1")[0];
+
+                ele_parent.removeChild(ele_p);
+
+            };
+           // 绑定替换节点事件
+            eleBtn.onclick=function () {
+                //创建的 新节点
+                var ele_img=document.createElement("img");  // <img>
+                ele_img.src="Bootstrap_i2.png";   //  <img src="">
+                ele_img.height=50;
+                ele_img.width=50;
+
+                // 被替换的节点
+                 var ele_p=document.getElementById("p1");
+
+                 // 父节点
+
+                var ele_parent=document.getElementsByClassName("c1")[0]
+
+                // 做替换
+
+                ele_parent.replaceChild(ele_img,ele_p)
+
+
+
+
+
+            }
+
+
+            //  表格操作
+
+            var eles=document.getElementsByClassName("del") ;
+            for(var i=0;i<eles.length;i++){
+            eles[i].onclick=function () {
+                // console.log(this.parentElement.parentElement);
+                var ele_tr=this.parentElement.parentElement;
+
+                var ele_tbody=document.getElementById("t1");
+
+                ele_tbody.removeChild(ele_tr);
+
+                console.log(ele_tbody)
+            }
+        }
+
+           };
+
+
+
+
+
+    </script>
+
+
+
+
+</head>
+<body>
+
+<div class="c1">
+     <p id="p1">p1</p>
+</div>
+<button class="addBtn">ADD</button>
+<button class="delBtn">del</button>
+<button class="repalceBtn">repalceBtn</button>
+<hr>
+
+<table border="1" >
+
+    <tbody id="t1">
+         <tr>
+             <td><input type="checkbox"></td>
+             <td><input type="text"></td>
+             <td><button class="del">del1</button></td>
+         </tr>
+
+         <tr>
+            <td><input type="checkbox"></td>
+            <td><input type="text"></td>
+            <td><button class="del">del2</button></td>
+         </tr>
+
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><input type="text"></td>
+            <td><button class="del">del3</button></td>
+         </tr>
+
+       <tr>
+            <td><input type="checkbox"></td>
+            <td><input type="text"></td>
+            <td><button class="del">del3</button></td>
+       </tr>
+
+    </tbody>
+
+</table>
+
+<div>
+    <div>
+        <div></div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

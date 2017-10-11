@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <title>search实例</title>
+</head>
+<body>
+<input type="text" value="username" id="search">
+
+<script>
+var ele=document.getElementById("search");
+ele.onfocus=function () {
+    this.value="";
+};
+
+ele.onblur=function () {
+    if(this.value.trim()==""){
+        this.value="username"
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <title>全选反选取消</title>
+</head>
+<body>
+
+<table border="1" align="center">
+    <tr>
+        <td colspan="3"><button id="qx">全选</button><button id="fx">反选</button><button id="cancel">取消</button></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>11111</td>
+        <td>22222</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>11111</td>
+        <td>22222</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>11111</td>
+        <td>22222</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>11111</td>
+        <td>22222</td>
+    </tr>
+
+</table>
+<script>
+    var qx=document.getElementById("qx");
+    var fx=document.getElementById("fx");
+    var cancel=document.getElementById("cancel");
+    var inputs=document.getElementsByTagName("input");
+    qx.onclick=function () {
+        for (var i=0;i<inputs.length;i++){
+            inputs[i].checked="checked";
+        }
+    }
+    fx.onclick=function () {
+        for (var i=0;i<inputs.length;i++){
+            if(inputs[i].checked){
+                inputs[i].checked="";
+            }else{
+                inputs[i].checked="checked";
+            }
+        }
+    }
+    cancel.onclick=function () {
+        for (var i=0;i<inputs.length;i++){
+            inputs[i].checked="";
+        }
+    }
+</script>
+</body>
+</html>

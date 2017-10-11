@@ -4,11 +4,83 @@
     <meta charset="UTF-8">
     <title>函数讲解</title>
     <script>
-//    var pattern=/^[\w]+\.(zip|rar|gz)$/;
-//    var str='woshi.zip';
-//    alert(pattern.test(str))
-        var box = new Function('num1','num2','return num1+num2');
-        alert(box(1,2))
+//        function box(num){
+//            if(num<=1){
+//                return 1;
+//            }else{
+//                return num+box(num-1);
+//            }
+//        }
+//        console.log(box(100));
+//        function box(num) {
+//            if(num<=1){
+//                return 1;
+//            }else{
+//                return num*arguments.callee(num-1);
+//            }
+//        }
+//        console.log(box(100));
+//        var color="红色";
+//        console.log(window.color);
+//        console.log(this.color);
+//        var box={
+//            color:"蓝色的",
+//            sayColor:function () {
+//                alert(this.color);
+//            }
+//        }
+//        alert(this.color);
+//        box.sayColor();
+//        var color="红色的";
+//        function sayColor() {
+//            alert(this.color);
+//        }
+//        sayColor();
+//        var box={
+//            color:"蓝色的"
+//        };
+//        box.sayColor=sayColor;
+//        box.sayColor();
+//            function box(num1,num2){
+//                return num1+num2;
+//            }
+//            function sum(num1,num2){
+//                return box.apply(this,[num1,num2]);
+//            }
+//            alert(sum(10,10));
+//        function box(num1,num2) {
+//            return num1+num2;
+//        }
+//        function sum(num1,num2) {
+//            return box.call(this,num1,num2);
+//        }
+//        alert(sum(10,10));
+//        var color="红色的";
+//        var box={
+//            color:"蓝色的"
+//        }
+//        function sayColor(){
+//            alert(this.color);
+//        }
+//        sayColor.apply(box);
+//          function box(obj) {
+//              obj.name='Lee';
+//          }
+//          var obj = new Object();
+//          box(obj);
+//          alert(obj.name);
+//            var abc=[1,2,3];
+//            alert(typeof abc)
+//        var box="blue";
+//        function setBox(){
+//          alert(box);
+//        }
+//        setBox();
+
+          var box="Lee";
+//          box=null;
+          alert(box);
+
     </script>
 </head>
 <body>
