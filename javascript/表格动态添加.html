@@ -37,13 +37,13 @@
     <p>姓名 <input type="text" id="name"></p>
     <p>年龄 <input type="text" id="age"></p>
     <p>性别 <input type="text" id="sex"></p>
-    <input type="button" id="submit" value="提交">
+    <input type="button" id="submit" class="xiugai" value="提交">
 </form>
 </div>
 
 <table border="1" align="center">
     <thead>
-        <tr>
+        <tr align="center">
             <td colspan="4"><button id="btn">添加</button></td>
         </tr>
         <tr>
@@ -58,7 +58,7 @@
             <td>张三</td>
             <td>30</td>
             <td>男</td>
-            <td><button id="del" onclick="del(this)">删除</button></td>
+            <td><button id="del" onclick="del(this)">删除</button><button onclick="edit(this)">编辑</button></td>
         </tr>
     </tbody>
 </table>
@@ -67,6 +67,11 @@
         var btn=document.getElementById("btn");
         var tdata=document.getElementById("tdata");
         var submit=document.getElementById("submit");
+        var gaihang="";
+        var shade=document.getElementsByClassName("shade")[0];
+        var model=document.getElementsByClassName("model")[0];
+        var xg=document.getElementsByClassName("xiugai")[0];
+
     submit.onclick=function () {
         var name=document.getElementById("name");
         var age=document.getElementById("age");
@@ -77,14 +82,18 @@
         var ele_td3=document.createElement("td");
         var ele_td4=document.createElement("td");
         var ele_button=document.createElement("button");
+        var ele_edit=document.createElement("button");
         var shade=document.getElementsByClassName("shade")[0];
         var model=document.getElementsByClassName("model")[0];
         ele_td1.innerHTML=name.value;
         ele_td2.innerHTML=age.value;
         ele_td3.innerHTML=sex.value;
         ele_button.innerHTML="删除";
+        ele_edit.innerHTML="编辑";
+        ele_edit.setAttribute("onclick","edit(this)");
         ele_button.setAttribute("onclick","del(this)");
-        ele_td4.appendChild(ele_button)
+        ele_td4.appendChild(ele_button);
+        ele_td4.appendChild(ele_edit);
         ele_tr.appendChild(ele_td1);
         ele_tr.appendChild(ele_td2);
         ele_tr.appendChild(ele_td3);
@@ -96,8 +105,7 @@
     };
     
     btn.onclick=function () {
-        var shade=document.getElementsByClassName("shade")[0];
-        var model=document.getElementsByClassName("model")[0];
+
         shade.classList.remove("hide");
         model.classList.remove("hide");
     }
@@ -106,6 +114,72 @@
        var ele_tr=obj.parentElement.parentElement;
        console.log(ele_tr);
        tdata.removeChild(ele_tr);
+    }
+
+
+    function edit(obj) {
+        var shade=document.getElementsByClassName("shade")[0];
+        var model=document.getElementsByClassName("model")[0];
+
+        shade.classList.remove("hide");
+        model.classList.remove("hide");
+
+        var name=document.getElementById("name");
+        var age=document.getElementById("age");
+        var sex=document.getElementById("sex");
+        var tr=obj.parentElement.parentElement;
+        gaihang=tr;       //给值全局变量
+        var tds=tr.children;
+        var sz=[];
+        for (var i=0;i<tds.length-1;i++){
+            sz[i]=tds[i].innerHTML;
+        }
+        name.value=sz[0];
+        age.value=sz[1];
+        sex.value=sz[2];
+        console.log("xg",xg);
+        xg.value="修改";
+        xg.removeAttribute("id");
+        xg.setAttribute("onclick","xiugai()");
+    }
+
+
+
+    function xiugai() {
+        var name=document.getElementById("name");
+        var age=document.getElementById("age");
+        var sex=document.getElementById("sex");
+        var ele_tr=document.createElement("tr");
+        var ele_td1=document.createElement("td");
+        var ele_td2=document.createElement("td");
+        var ele_td3=document.createElement("td");
+        var ele_td4=document.createElement("td");
+        var ele_button=document.createElement("button");
+        var ele_edit=document.createElement("button");
+        var shade=document.getElementsByClassName("shade")[0];
+        var model=document.getElementsByClassName("model")[0];
+        ele_td1.innerHTML=name.value;
+        ele_td2.innerHTML=age.value;
+        ele_td3.innerHTML=sex.value;
+        ele_button.innerHTML="删除";
+        ele_edit.innerHTML="编辑";
+        ele_edit.setAttribute("onclick","edit(this)");
+        ele_button.setAttribute("onclick","del(this)");
+        ele_td4.appendChild(ele_button);
+        ele_td4.appendChild(ele_edit);
+        ele_tr.appendChild(ele_td1);
+        ele_tr.appendChild(ele_td2);
+        ele_tr.appendChild(ele_td3);
+        ele_tr.appendChild(ele_td4);
+        console.log("要改的行",gaihang)
+        tdata.replaceChild(ele_tr,gaihang);
+//        tdata.appendChild(ele_tr);
+        shade.classList.add("hide");
+        model.classList.add("hide");
+        xg.value="提交";
+        xg.setAttribute("id","submit");
+        xg.removeAttribute("onclick");
+        xg.removeAttribute("class");
     }
 
 </script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<table border="1" align="center">
+    <thead>
+        <tr>
+            <td>name</td>
+            <td>age</td>
+            <td>sex</td>
+            <td>operate</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>egon</td>
+            <td>33</td>
+            <td>man</td>
+            <td>
+                <button class="edit">编辑</button>
+                <button>删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>alex</td>
+            <td>32</td>
+            <td>feman</td>
+            <td>
+                <button class="edit">编辑</button>
+                <button>删除</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<script>
+
+var tbody=document.getElementsByTagName("tbody")[0];
+var edit=document.getElementsByClassName("edit")[0];
+tbody.addEventListener("click",function (e) {
+    if (e.target.className=="edit"){
+        console.log("编辑");
+    }
+})
+
+</script>
+
+</body>
+</html>

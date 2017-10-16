@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <title>菜单选中事件</title>
+    <style>
+        ul li{
+            list-style: none;
+            display: inline;
+        }
+        p{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>菜单一</li>
+    <li>菜单二</li>
+    <li>菜单三</li>
+</ul>
+<p>菜单一内容</p>
+<p>菜单二内容</p>
+<p>菜单三内容</p>
+<script src="jquery.min.js"></script>
+<script>
+$("p").eq(0).show();
+$("ul li").hover(
+    function () {
+        var idx=$(this).index();
+        $("p").eq(idx).show();
+        $("p").not($("p").eq(idx)).hide();
+    }
+)
+</script>
+</body>
+</html>

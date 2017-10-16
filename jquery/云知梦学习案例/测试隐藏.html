@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+<h1>水果选择:</h1>
+<form action="javascript:">
+    <select name="" id="s1" size="2" multiple>
+        <option value="">西瓜</option>
+        <option value="">冬瓜</option>
+        <option value="">苹果</option>
+        <option value="">南瓜</option>
+    </select>
+    <input type="button" value=">>" size="2" id="btn" >
+    <select name="" id="s2" size="2">
+    </select>
+</form>
+
+<script>
+//    $("h1").click(
+//        function () {
+//            $(this).next().toggle("slow")
+//        }
+//    )
+$("#btn").click(
+    function () {
+        $("option:selected").clone().appendTo("#s2");
+    }
+)
+</script>
+</body>
+</html>

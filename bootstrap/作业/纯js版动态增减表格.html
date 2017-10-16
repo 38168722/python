@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <link rel="stylesheet" href="../bootstrap3/css/bootstrap.min.css"/>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+</head>
+<style>
+    .container{
+        margin-top: 50px;
+    }
+</style>
+<body>
+
+
+<!--模态对话框-->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">添加学生信息</h4>
+      </div>
+      <div class="modal-body ">
+
+<!--表单数据-->
+    <form>
+      <div class="form-group">
+        <label for="username">用户名</label>
+        <input type="text" class="form-control" id="username" placeholder="username">
+      </div>
+      <div class="form-group">
+        <label for="age">年龄</label>
+        <input type="text" class="form-control" id="age" placeholder="userage">
+      </div>
+      <div class="form-group">
+        <label for="sex">性别</label>
+        <input type="text" class="form-control" id="sex" placeholder="usersex">
+      </div>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary add">添加</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--表格部分-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">添加学生信息</button>
+        <table class="table table-striped text-center">
+            <thead>
+            <tr>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>egon</td>
+                    <td>30</td>
+                    <td>女</td>
+                    <td><button class="btn btn-success edit">编辑</button>&nbsp;&nbsp;<button class="btn btn-danger del">删除</button></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+//    添加数据
+    var ele_add=document.getElementsByClassName("add")[0];
+    var ele_tbody=document.getElementsByTagName("tbody")[0];
+    var ele_input=document.getElementsByTagName("input");
+    var input_values=[];
+    ele_add.onclick=function(){
+        for(var i=0;i<ele_input.length;i++){
+            input_values.push(ele_input[i].value);
+        }
+        var ele_str="<tr><td>"+input_values[0]+"</td><td>"+input_values[1]+"</td><td>"+input_values[2]+"</td><td><button class='btn btn-success edit'>编辑</button>&nbsp;&nbsp;<button class='btn btn-danger del'>删除</button></td></tr>";
+        ele_tbody.innerHTML+=ele_str;
+        $("#myModal").modal("hide");
+    }
+
+//    删除及修改数据
+    var ele_del=document.getElementsByClassName("del")[0];
+    var ele_edit=document.getElementsByClassName("edit")[0];
+    ele_tbody.addEventListener("click",function (e) {
+        if(e.target.className=="btn btn-danger del"){
+            ele_tbody.removeChild(e.target.parentElement.parentElement)
+        }else if(e.target.className=="btn btn-success edit"){
+            var tds=e.target.parentElement.parentElement.children;
+            for (var i=0;i<tds.length-1;i++){
+                tds[i].innerHTML="<input type='text' value="+tds[i].innerText+">";
+            }
+            e.target.innerHTML="保存";
+            e.target.className="btn btn-info saveBtn";
+        }else if(e.target.className=="btn btn-info saveBtn"){
+                var eles_td=e.target.parentElement.parentElement.children;
+                for(var i=0;i<eles_td.length-1;i++){
+                    eles_td[i].innerHTML=eles_td[i].firstElementChild.value;
+                };
+            e.target.innerHTML="编辑";
+            e.target.className="btn btn-success edit"
+        };
+
+    })
+
+</script>
+</body>
+</html>

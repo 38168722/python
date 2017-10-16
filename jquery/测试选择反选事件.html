@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <title>测试选择反选事件</title>
+</head>
+<body>
+<input type="checkbox">11111
+<input type="checkbox">22222
+<input type="checkbox">33333
+<input type="checkbox">44444
+<input type="checkbox">55555
+<button>反选</button>
+<script src="jquery.min.js"></script>
+<script>
+$("button").click(function () {
+    $(":checkbox").each(function () {
+        this.checked=!this.checked;
+    });
+});
+
+</script>
+</body>
+</html>
