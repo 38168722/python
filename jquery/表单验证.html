@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>form 注册表单验证</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <style>
+
+        .container{
+            margin-top: 100px;
+            text-align: center;
+        }
+        .error{
+            display: none;
+        }
+
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form action="http://www.baidu.com" method="get">
+<p>用户名:</p>
+<p>
+    <input type="text" name="username" class="auth">
+    <span class="error">用户名长度至少6位!</span>
+</p>
+<p>密码:</p>
+<p>
+    <input type="text" name="password" class="auth">
+    <span class="error">密码长度至少8位!</span>
+</p>
+<p>确认密码:</p>
+<p>
+    <input type="text" name="repassword" class="auth">
+    <span class="error">两次密码不一致!</span>
+</p>
+<p>手机号:</p>
+<p>
+    <input type="text" name="phone" class="auth">
+    <span class="error">手机号必须以139开头且不能少于11位!</span>
+</p>
+<p>邮箱:</p>
+<p>
+    <input type="text" name="mail" class="auth">
+    <span class="error">邮箱格式错误!</span>
+</p>
+<p><input type="submit" value="提交"></p>
+</form>
+<script>
+    $(".auth").data({"num":0});
+    $("[name=username]").blur(
+        function () {
+            if($("[name=username]").val().length<6){
+                $(this).data({"num":0});
+                $(this).next().show();
+            }else{
+                $(this).data({"num":1});
+                $(this).next().hide();
+            }
+        }
+    )
+    $("[name=password]").blur(
+        function () {
+            if($("[name=password]").val().length<8){
+                $(this).data({"num":0});
+                $(this).next().show();
+            }else{
+                $(this).data({"num":1});
+                $(this).next().hide();
+            }
+        }
+    )
+
+    $("[name=repassword]").blur(
+        function () {
+            var p1=$("[name=password]").val();
+            var p2= $("[name=repassword]").val();
+            if(p2!=p1){
+                $(this).data({"num":0});
+                $(this).next().show();
+            }else{
+                $(this).data({"num":1});
+                $(this).next().hide();
+            }
+        }
+    )
+
+    $("[name=phone]").blur(
+        function () {
+            if($(this).val().match(/^139\d{8}$/)){
+               $(this).data({"num":1});
+               $(this).next().hide();
+            }else{
+               $(this).data({"num":0});
+               $(this).next().show();
+            }
+        }
+    )
+
+    $("[name=mail]").blur(
+        function () {
+            if($(this).val().match(/\w+\.*\w*\@\w+\.\w+/)){
+               $(this).data({"num":1});
+               $(this).next().hide();
+            }else{
+               $(this).data({"num":0});
+               $(this).next().show();
+            }
+        }
+    )
+    $("form").submit(
+         function () {
+            $(".auth").blur();
+            total=0;
+            $(".auth").each(function () {
+                total+=$(this).data("num")
+            });
+             if(total!=5){
+                return false;
+             }
+         }
+    )
+    
+</script>
+</body>
+</html>

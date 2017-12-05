@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<p>游泳<input type="checkbox"></p>
+<p>打球<input type="checkbox"></p>
+<p>开车<input type="checkbox"></p>
+<p>跳舞<input type="checkbox"></p>
+<p>打架<input type="checkbox"></p>
+<button id="all">全选</button>
+<button id="reverse">反选</button>
+<button id="cancelall">取消</button>
+<button id="addinfo">ok</button>
+<hr>
+<div class="info">
+
+
+</div>
+<script>
+    $("#all").click(
+        function () {
+            $("input").attr("checked",true);
+        }
+    );
+
+    $("#cancelall").click(
+        function(){
+            $("input").attr("checked",false);
+        }
+    );
+
+    $("#reverse").click(
+        function(){
+            $("input").each(
+                function(){
+                    this.checked=!this.checked;
+                }
+            )
+        }
+    )
+    $("#addinfo").click(
+        function(){
+            $(":checked").parent().appendTo(".info")
+        }
+    )
+
+</script>
+</body>
+</html>

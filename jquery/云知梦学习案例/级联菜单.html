@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>级联菜单</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="page-header">级联菜单研究</h1>
+    <ul class="nav nav-tabs">
+    <li class="active">
+        <a href="">linux</a>
+    </li>
+    <li class="">
+        <a href="">php</a>
+    </li>
+    <li class="list-unstyled">
+        <a href="">java</a>
+    </li>
+    </ul>
+</div>
+<ul>
+    <li class="list-unstyled" style="list-style: none">abc</li>
+
+</ul>
+
+<div class="row">
+    <p class="nav">linuxis ver much !!!linux is ver much linux is ver much linux is ver much linux is ver much linux is ver much </p>
+    <p class="nav">php phpphpphpphpphpphpphpphpphpphpphpphpphpphpphpphpphpphpphpphp    </p>
+    <p class="nav">javajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajavajava  </p>
+</div>
+<link rel="stylesheet" href="../js/bootstrap.min.css">
+<script type="application/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="application/javascript" src="../js/bootstrap.min.js"></script>
+<script>
+    $("li").mouseenter(function () {
+      $(this).addClass("active");
+      $("li").not($(this)).removeClass("active");
+      idx=$(this).index("li");
+      console.log("第几个索引"+idx)
+      $(".row p").eq(idx).show();
+      $(".row p").not($(".row p").eq(idx)).hide();
+    });
+    $(".row p").eq(0).show();
+</script>
+
+</body>
+</html>
